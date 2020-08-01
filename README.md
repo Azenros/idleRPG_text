@@ -2,11 +2,11 @@
 Summer 2020 Project: Making a text-based idleRPG from scratch.
 
 ## Table of Contents
-* [Software Used] Software Used
-* [Main Ideas] Main Ideas
-* [Current Functionalities] Current Functionalities
-* [In Progress] In Progress
-* [Planned to be added] Ideas Planned
+* [Software Used](Software Used)
+* [Main Ideas](Main Ideas)
+* [Current Functionalities](Current Functionalities)
+* [In Progress](In Progress)
+* [Planned to be added](Ideas Planned)
 
 ### Software Used:
 - Repl.it (Any commit on this project from a "repl.it user" is me)
