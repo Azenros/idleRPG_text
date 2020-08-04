@@ -1,5 +1,5 @@
 # idleRPG_text [![Run on Repl.it](https://repl.it/badge/github/Azenros/idleRPG_text)](https://repl.it/github/Azenros/idleRPG_text)
-Summer 2020 Project: Making a text-based (idle)RPG from scratch.
+Summer 2020 Project: Making a text-based (idle?)RPG from scratch.
 
 ### Software Used:
 - Repl.it (Any commit on this project from a "repl.it user" is me)
