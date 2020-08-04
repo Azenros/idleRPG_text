@@ -2,8 +2,9 @@
 #define CHARACTERS_H
 
 #include "includes.h"
-#include "item.h"
+#include "inventory.h"
 
+//Experience points to next level.
 std::vector<int> toNextLvl = {0, 1, 2, 4, 8, 16, 
                          32, 64, 128, 256, 
                          1024, 2048};
@@ -16,7 +17,8 @@ class Entity {
     int attack = 0; //atk
     int defense = 0; //def
     int level = 1; 
-    int expHeld = 0;
+    //Total Exp for Players, Exp gained on kill for Monsters
+    int expHeld = 0; 
 
   protected:
     void setName(std::string s) { name = s; };
@@ -43,17 +45,18 @@ class Entity {
 
 class Player : public Entity {
   private:
-    int money = 0;
+    int gold = 0; //debating on whether to move this to the inventory
     int exptoNext = 1;
 
   public:
     Player(int i, std::string s, int a, int d) 
       : Entity(i,s,a,d) {};
 
-    int getMoney() { return money; };
+    int getGold() { return gold; };
     int getNext() { return exptoNext; };
-    void setMoney(int m) { money += m; };
+    void setGold(int m) { gold += m; };
     void addExp(int e) { setExp(getExp() + e); };
+
     void levelUp() {
       int l = getLvl();
       setLevel(l++);
@@ -64,17 +67,18 @@ class Player : public Entity {
 
 class Monster : public Entity {
   protected:
-    int moneyOnKill = 10;
+    int goldOnKill = 1;
 
   public:
     Monster(int i, std::string s, int a, int d) 
       : Entity(i,s,a,d) {}
     Monster(int i, std::string s, int a, int d, int m) 
-      : Entity(i,s,a,d), moneyOnKill(m) {};
+      : Entity(i,s,a,d), goldOnKill(m) {};
 
-    int getMoney() { return moneyOnKill; };
+    int getGold() { return goldOnKill; };
+    
     void onDefeat(Player p) {
-      p.setMoney(moneyOnKill);
+      p.setGold(goldOnKill);
       p.addExp(getExp());
       if (p.getExp() >= p.getNext()) {
         p.levelUp();
