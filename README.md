@@ -8,7 +8,9 @@ Summer 2020 Project: Making a text-based (idle)RPG from scratch.
 ### Main Ideas: 
 - Create an RPG with idle combat and movement Mechanics
 - Fully flesh out items, allow items between fights but not during fights
-- 
+- Place more focus on equipments rather than base stats
+- Insert some element of rng in here
+- Apply ideas I think about after leanring concepts in class
 
 ### Current Functionalities:
 - HP, Attack/Defense (Added 7/30/2020)
