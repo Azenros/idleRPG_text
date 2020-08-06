@@ -3,13 +3,14 @@
 
 #include "characters.h"
 
-std::string line = "__________________\n"
+std::string line = "__________________";
+std::string space = "                  ";
 
 struct Testing {
 
   void printEntStats (Entity e) { //print basic parameters
     std::cout << std::endl
-            << e.getName() << ":\n" << line << "\n"
+            << e.getName() << ":\n" << line << "\n\n"
             << "Level " << e.getLvl() << std::endl
             << "EXP: " << e.getExp() << std::endl
             << "HP: " << e.getHP() << " / " << e.getMaxHP() << std::endl
@@ -25,7 +26,7 @@ struct Testing {
     printEntStats(p);
     std::cout << "To Next Level: " << p.getNext() << std::endl
               << "Gold: " << p.getGold() << std::endl
-              << std::endl << line;
+              << std::endl << line << std::endl;
 
   };
 
@@ -37,6 +38,22 @@ struct Testing {
               << std::endl << line << std::endl;
 
   };
+
+  void twinStats(Player p, Monster m) {
+    std::cout << std::endl
+              << p.getName() << ":" << space << m.getName() << ":\n"
+              << line << line << std::endl << std::endl
+              << "Level " << p.getLvl() << space 
+              << "Level " << m.getLvl() << std::endl
+              << "EXP: " << p.getExp() << " / " << p.getNext() << space 
+              << "EXP: " << m.getExp() << std::endl
+              << "HP: " << p.getHP() << " / " << p.getMaxHP() << space
+              << "HP: " << m.getHP() << " / " << m.getMaxHP() << std::endl
+              << "ATK: " << p.getAtk() << space << "ATK: " << m.getAtk() << std::endl
+              << "DEF: " << p.getDef() << space << "DEF: " << m.getDef() << std::endl;
+
+
+  }
 
 };
 

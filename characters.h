@@ -5,7 +5,7 @@
 #include "inventory.h"
 
 //Experience points to next level.
-std::vector<int> toNextLvl = {0, 1, 2, 4, 8, 16, 
+int toNextLvl[] = {0, 1, 2, 4, 8, 16, 
                          32, 64, 128, 256, 
                          1024, 2048};
 
@@ -30,7 +30,7 @@ class Entity {
     void setExp(int e) { expHeld = e; };
 
   public:
-    Entity(int h, std::string s, int a, int d) 
+    Entity(std::string s, int h, int a, int d) 
       : health(h), maxhealth(h), name(s), attack(a), defense(d) {};
 
     int getHP() { return health; };
@@ -49,8 +49,8 @@ class Player : public Entity {
     int exptoNext = 1;
 
   public:
-    Player(int i, std::string s, int a, int d) 
-      : Entity(i,s,a,d) {};
+    Player(std::string s, int i, int a, int d) 
+      : Entity(s,i,a,d) {};
 
     int getGold() { return gold; };
     int getNext() { return exptoNext; };
@@ -70,10 +70,10 @@ class Monster : public Entity {
     int goldOnKill = 1;
 
   public:
-    Monster(int i, std::string s, int a, int d) 
-      : Entity(i,s,a,d) {}
-    Monster(int i, std::string s, int a, int d, int m) 
-      : Entity(i,s,a,d), goldOnKill(m) {};
+    Monster(std::string s, int i, int a, int d) 
+      : Entity(s,i,a,d) {}
+    Monster(std::string s, int i, int a, int d, int m) 
+      : Entity(s,i,a,d), goldOnKill(m) {};
 
     int getGold() { return goldOnKill; };
     
