@@ -6,12 +6,15 @@
 
 std::string line = "__________________";
 std::string space = "                  ";
+<<<<<<< HEAD
 
 void printChar(int i, char c) {
   for (int k = 0; k < i; k++) {
     std::cout << c;
   }
 }
+=======
+>>>>>>> 7461e614308bdd47e14ebcd23a59ce85d6c4fc91
 
 struct Testing {
 
@@ -104,9 +107,6 @@ struct Testing {
     std::cout << "DEF: " << p.getDef();
     printChar(spaces, ' ');
     std::cout << "DEF: " << m.getDef() << std::endl;
-
-    
-
 
   }
 
